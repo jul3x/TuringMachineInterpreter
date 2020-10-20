@@ -14,7 +14,7 @@ class TuringMachine(object):
 
         while True:
             self.steps = self.steps - 1
-            if self.steps < 0:
+            if self.steps < 0 or state == Consts.REJECT:
                 return False
 
             char = input[cursor]
