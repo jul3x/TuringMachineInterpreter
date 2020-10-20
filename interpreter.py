@@ -2,6 +2,7 @@
 
 import sys
 
+from consts import Consts
 from turing_machine import TuringMachine
 from parse import ParseError, parse_transitions
 
@@ -20,10 +21,14 @@ if __name__ == "__main__":
         sys.exit(1)
     else:
         try:
-            machine = TuringMachine(parse_transitions(sys.argv[1]), int(sys.argv[2]))
+            steps = int(sys.argv[2])
+            if steps < 0:
+                raise ValueError
+
+            machine = TuringMachine(parse_transitions(sys.argv[1]), steps)
 
             value = input()
-            result = machine.start(value)
+            result = machine.start([char for char in value] if value else [Consts.BLANK])
             print('YES') if result else print('NO')
 
             sys.exit(0)
