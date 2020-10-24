@@ -2,9 +2,9 @@
 
 import sys
 
-from consts import Consts
-from turing_machine import TuringMachine
-from parse import ParseError, parse_transitions
+from interpreter.consts import Consts
+from interpreter.turing_machine import TuringMachine
+from interpreter.parse import ParseError, parse_transitions
 
 
 def usage():

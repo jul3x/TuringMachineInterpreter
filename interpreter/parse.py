@@ -1,5 +1,5 @@
-from consts import Consts
-from turing_machine import Transitions
+from interpreter.consts import Consts
+from interpreter.turing_machine import Transitions
 
 
 class ParseError(Exception):

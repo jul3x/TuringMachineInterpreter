@@ -1,6 +1,6 @@
 from copy import deepcopy
 
-from consts import Consts
+from interpreter.consts import Consts
 
 
 class TuringMachine(object):
@@ -48,6 +48,8 @@ class TuringMachine(object):
                 input.append(Consts.BLANK)
 
             return cursor + 1
+        else:
+            return cursor
 
     @staticmethod
     def print(input, state, cursor):

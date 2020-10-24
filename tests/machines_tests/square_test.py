@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 
-from consts import Consts
-from turing_machine import TuringMachine
-from parse import parse_transitions
+import os
+import sys
 
-machine = TuringMachine(parse_transitions("tests/square.tm"), 10000)
+sys.path.append(os.path.abspath(os.path.join('../..')))
+
+from interpreter.consts import Consts
+from interpreter.turing_machine import TuringMachine
+from interpreter.parse import parse_transitions
+
+machine = TuringMachine(parse_transitions("../square.tm"), 10000)
 
 # Checks all possible combinations of 1's and 2's of max length 20
 for test in range(0, 1048576):
