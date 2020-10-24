@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from consts import Consts
 from turing_machine import TuringMachine
 from parse import parse_transitions
