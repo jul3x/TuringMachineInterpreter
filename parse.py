@@ -13,6 +13,8 @@ def parse_transitions(file_name):
         line_number = 1
 
         for line in f:
+            if line.startswith('/*'):
+                continue
             split = line.split()
 
             if split:
